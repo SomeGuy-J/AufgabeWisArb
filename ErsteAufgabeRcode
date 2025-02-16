@@ -1,2 +1,25 @@
 ## R code für die Erste Aufgabe* 
-##Test update## 
+##Lese datensatz ein 
+
+library(stringr)
+library(readxl) 
+
+# Excel-Datei einlesen 
+df <- read.csv("https://raw.githubusercontent.com/SomeGuy-J/AufgabeWisArb/refs/heads/main/titanic.csv")
+
+##erstelle neue variable mit Anrede
+# Extrahiere das Wort nach dem Komma für alle 1000+ Einträge
+
+Anrede <- sub("^.*?,\\s(\\w+).*", "\\1", df$Name)
+
+
+## Kodiere Variablen Survived, Sex, Embarked als Faktor um
+
+df$Survived <- as.factor(df$Survived)
+df$Sex <- as.factor(df$Sex)
+df$Embarked <- as.factor(df$Embarked)
+
+# Umwandlung der Variable 'Pclass' in einen geordneten Faktor
+df$Pclass <- factor(df$Pclass, levels = c(1, 2, 3), ordered = TRUE)
+
+
