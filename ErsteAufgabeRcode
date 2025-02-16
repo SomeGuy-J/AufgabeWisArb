@@ -1,25 +1,31 @@
 ## R code für die Erste Aufgabe* 
 ##Lese datensatz ein 
 
+install.packages("stringr")
+install.packages("readxl")
 library(stringr)
 library(readxl) 
 
 # Excel-Datei einlesen 
-df <- read.csv("https://raw.githubusercontent.com/SomeGuy-J/AufgabeWisArb/refs/heads/main/titanic.csv")
+titanic <- read.csv("https://raw.githubusercontent.com/SomeGuy-J/AufgabeWisArb/refs/heads/main/titanic.csv")
 
 ##erstelle neue variable mit Anrede
 # Extrahiere das Wort nach dem Komma für alle 1000+ Einträge
 
-Anrede <- sub("^.*?,\\s(\\w+).*", "\\1", df$Name)
+Anrede <- sub("^.*?,\\s(\\w+).*", "\\1", titanic$Name)
 
 
 ## Kodiere Variablen Survived, Sex, Embarked als Faktor um
 
-df$Survived <- as.factor(df$Survived)
-df$Sex <- as.factor(df$Sex)
-df$Embarked <- as.factor(df$Embarked)
+titanic$Survived <- as.factor(titanic$Survived)
+titanic$Sex <- as.factor(titanic$Sex)
+titanic$Embarked <- as.factor(titanic$Embarked)
 
 # Umwandlung der Variable 'Pclass' in einen geordneten Faktor
-df$Pclass <- factor(df$Pclass, levels = c(1, 2, 3), ordered = TRUE)
+titanic$Pclass <- factor(titanic$Pclass, levels = c(1, 2, 3), ordered = TRUE)
 
+# Ersetze NA's aus Alter mit Mittelwert
+titanic$Age[is.na(titanic$Age)] <- mean(titanic$Age, na.rm = T)
+
+# Erstellung neuer Variablen für Backbord/ Steuerbord, Deck und NA
 
