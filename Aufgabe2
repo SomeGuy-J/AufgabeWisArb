@@ -1,4 +1,4 @@
-i) ## Eine Funktion, die verschiedene geeignete deskriptive Statistiken für metrische Variablen berechnet und ausgibt:
+   ##i) Eine Funktion, die verschiedene geeignete deskriptive Statistiken für metrische Variablen berechnet und ausgibt:
       
    deskriptive_statistik_metrischer_variabeln <- function(titanic) {
    ## Fehlende Werte entfernen:
@@ -35,3 +35,31 @@ i) ## Eine Funktion, die verschiedene geeignete deskriptive Statistiken für met
      return(result)
      }
  ## Es folgt eine Darstellung aller zu vor genannten Berechnungen.
+
+##ii) Eine Funktion, die verschiedene geignete deskriptive Stastiken für kategoriale Variablen berechnet und ausgibt.
+##Funktion zur Berechnung deskriptiver Statistiken für kategoriale Variablen
+
+kategoriale_variablen <- function(data, var) {
+  ##Überprüfen, ob die Variable ein Factor oder Character ist
+  if (!is.factor(data[[var]]) && !is.character(data[[var]])) {
+    stop("Die Variable muss ein Factor oder Character sein.")
+  }
+  
+  ##Häufigkeiten der Kategorien berechnen
+  freq_table <- table(data[[var]])
+  
+  ##Modus berechnen
+  mode <- names(freq_table)[which.max(freq_table)]
+  
+  ##Relative Häufigkeiten berechnen
+  prop_table <- prop.table(freq_table)
+  
+  ##Ergebnisse in einer Liste zusammenfassen
+  results <- list(
+    Frequency = freq_table,
+    Mode = mode,
+    Proportion = prop_table
+  )
+  
+  return(results)
+}
