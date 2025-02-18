@@ -1,48 +1,48 @@
-i) ## Eine Funktion, die verschiedene geeignete deskriptive Statistiken für metrische Variablen berechnet und ausgibt
-      deskriptive_statistik_metrischer_variabeln <- function(x) {
+i) ## Eine Funktion, die verschiedene geeignete deskriptive Statistiken für metrische Variablen berechnet und ausgibt:
+      
+   deskriptive_statistik_metrischer_variabeln <- function(titanic) {
    ## Fehlende Werte entfernen:
-      x_clean <- x[!is.na(x)]
+      titanic_clean <- titanic[!is.na(x)]
    ## Bestimmung der Anzahl der Beobachtungen:
-      n <- length(x_clean)
-   ## Berechnung des arithmetischen Mittels
-      mean_val <- sum(x_clean) / n
+      n <- length(titanic_clean)
+   ## Berechnung des arithmetischen Mittels:
+      aritmetisches_mittel <- sum(titanic_clean) / n
    ## Berechnung des Medians:
-   ## Sortierung der Daten + Bestimmung des Mittelwertes der mittleren Werte (bei gerader Anzahl) oder des mittleren Wertes (bei ungerader Anzahl)
-      x_sorted <- sort(x_clean)
+   ## Sortierung der Daten + Bestimmung des Mittelwertes der mittleren Werte (bei gerader Anzahl) oder des mittleren Wertes (bei ungerader Anzahl):
+      titanic_sorted <- sort(titanic_clean)
        if(n %% 2 == 1) { 
-        median_val <- x_sorted[(n + 1) / 2]
+        median <- titanic_sorted[(n + 1) / 2]
          } else {
-        median_val <- (x_sorted[n/2] + x_sorted[n/2 + 1]) / 2
+        median <- (titanic_sorted[n/2] + titanic_sorted[n/2 + 1]) / 2
       }
-  ## Bestimmen von Minimum und Maximum
-     min_val <- x_sorted[1]
-     max_val <- x_sorted[n]
-  ## Berechnung der Stichprobenvarianz: Varianz = Summe((x - mean)^2) / (n - 1)
-     var_val <- sum((x_clean - mean_val)^2) / (n - 1)
-  ## Standardabweichung als Quadratwurzel der Varianz
-     sd_val <- sqrt(var_val)
-  ## Berechnung der Quantile (25%, 50%, 75%)
-     q1 <- quantile(x_clean, probs = 0.25, names = FALSE)
-     q2 <- quantile(x_clean, probs = 0.50, names = FALSE)  
-     q3 <- quantile(x_clean, probs = 0.75, names = FALSE)
+  ## Bestimmen von Minimum und Maximum:
+     min <- titanic_sorted[1]
+     max <- titanic_sorted[n]
+  ## Berechnung der Stichprobenvarianz: 
+     varianz <- sum((titanic_clean - arithmetisches_mittel)^2) / (n - 1)
+  ## Standardabweichung:
+     standartabweichung <- sqrt(varianz)
+  ## Berechnung der Quantile (25%, 50%, 75%):
+     q1 <- quantile(titanic_clean, probs = 0.25, names = FALSE)
+     q2 <- quantile(titanic_clean, probs = 0.50, names = FALSE)  
+     q3 <- quantile(titanic_clean, probs = 0.75, names = FALSE)
      # q2 entspricht auch dem Median
-  ## Berechnung des Interquartilsabstands (IQR)
-     IQR_val <- q3 - q1
-  
-  ## Zusammenstellung der Ergebnisse in Form einer Liste
+  ## Berechnung des Interquartilsabstands (IQR):
+     IQR <- q3 - q1
+  ## Zusammenstellung der Ergebnisse in Form einer Liste:
      result <- list(
      N = n,
-     Mean = mean_val,
-     Median = median_val,
-     Minimum = min_val,
-     Maximum = max_val,
-     Variance = var_val,
-     StandardDeviation = sd_val,
+     Arithmetisches Mittel = aritmetisches_mittel,
+     Median = median,
+     Minimum = min,
+     Maximum = max,
+     Varianz = varianz,
+     Standardabweichung = standartabweichung
      Q1 = q1,
      Q2 = q2,
      Q3 = q3,
-     IQR = IQR_val
+     IQR = IQR
      )
      return(result)
      }
- ## Es folgt eine Darstellung aller zu vor genannten Berechnungen 
+ ## Es folgt eine Darstellung aller zu vor genannten Berechnungen.
