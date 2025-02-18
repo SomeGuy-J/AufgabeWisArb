@@ -31,18 +31,7 @@ i) ## Eine Funktion, die verschiedene geeignete deskriptive Statistiken für met
      IQR <- q3 - q1
   ## Zusammenstellung der Ergebnisse in Form einer Liste:
      result <- list(
-     N = n,
-     Arithmetisches Mittel = aritmetisches_mittel,
-     Median = median,
-     Minimum = min,
-     Maximum = max,
-     Varianz = varianz,
-     Standardabweichung = standartabweichung
-     Q1 = q1,
-     Q2 = q2,
-     Q3 = q3,
-     IQR = IQR
-     )
+     N = n, Arithmetisches Mittel = aritmetisches_mittel, Median = median, Minimum = min, Maximum = max, Varianz = varianz, Standardabweichung = standartabweichung, Q1 = q1, Q2 = q2, Q3 = q3, IQR = IQR)
      return(result)
      }
  ## Es folgt eine Darstellung aller zu vor genannten Berechnungen.
