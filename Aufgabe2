@@ -52,7 +52,7 @@ kategoriale_variablen <- function(data, var) {
   mode <- names(freq_table)[which.max(freq_table)]
   
   ##Relative Häufigkeiten berechnen
-  prop_table <- prop.table(freq_table)
+  prop_table <- round(prop.table(freq_table)*100,3)
   
   ##Ergebnisse in einer Liste zusammenfassen
   results <- list(
