@@ -9,15 +9,15 @@ i) ## Eine Funktion, die verschiedene geeignete deskriptive Statistiken für met
       aritmetisches_mittel <- sum(titanic_clean) / n
    ## Berechnung des Medians:
    ## Sortierung der Daten + Bestimmung des Mittelwertes der mittleren Werte (bei gerader Anzahl) oder des mittleren Wertes (bei ungerader Anzahl):
-      titanic_sorted <- sort(titanic_clean)
+      titanic_sortiert <- sort(titanic_clean)
        if(n %% 2 == 1) { 
-        median <- titanic_sorted[(n + 1) / 2]
+        median <- titanic_sortiert[(n + 1) / 2]
          } else {
-        median <- (titanic_sorted[n/2] + titanic_sorted[n/2 + 1]) / 2
+        median <- (titanic_sortiert[n/2] + titanic_sortiert[n/2 + 1]) / 2
       }
   ## Bestimmen von Minimum und Maximum:
-     min <- titanic_sorted[1]
-     max <- titanic_sorted[n]
+     min <- titanic_sortiert[1]
+     max <- titanic_sortiert[n]
   ## Berechnung der Stichprobenvarianz: 
      varianz <- sum((titanic_clean - arithmetisches_mittel)^2) / (n - 1)
   ## Standardabweichung:
