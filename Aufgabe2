@@ -63,3 +63,48 @@ kategoriale_variablen <- function(data, var) {
   
   return(results)
 }
+
+
+## iv) Eine Funktion zur Analyse des Zusammenhangs bzw. der Korrelation zwischen einer metrischen und einer dichotomen Variablen
+analyze_metric_dichotomous <- function(data, metric_var, dichotomous_var) {
+    ## Überprüfung der Variablen, falls nicht vorhanden Fehlerausgabe, sonst Funktion anwenden
+    
+    if (!(metric_var %in% names(data)) | !(dichotomous_var %in% names(data))) {
+        stop("Eine oder beide Variablen sind nicht im Datensatz vorhanden.")
+    }
+    
+    ## Überprüfung der dichotomen Variable (ob sie nur 2 Merkmalsausprägungen hat)
+    unique_vals <- unique(data[[dichotomous_var]])
+    if (length(unique_vals) != 2) {
+        stop("Die dichotome Variable muss genau zwei Kategorien haben.")
+    }
+    
+    ## NA-Werten löschen
+    data_clean <- na.omit(data[, c(metric_var, dichotomous_var)])
+    
+    ## Mittelwert und Standardabweichung
+    summary_stats <- aggregate(
+        data_clean[[metric_var]],
+        by = list(Group = data_clean[[dichotomous_var]]),
+        FUN = function(x) c(Mean = mean(x), SD = sd(x))
+    )
+    
+    ## Lesbarkeit verbessern
+    summary_stats <- do.call(data.frame, summary_stats)
+    
+    ## Spaltennamen hinzufügen
+    colnames(summary_stats) <- c(dichotomous_var, "Mean", "SD")
+    
+    ## Ausgabe der deskriptiven Statistiken
+    cat("Deskriptive Statistiken:\n")
+    print(summary_stats)
+    
+    ## T-Test zum Vergleich der Mittelwerte der Gruppen
+    t_test_result <- t.test(
+        data_clean[[metric_var]] ~ data_clean[[dichotomous_var]]
+    )
+    
+    ## Ausgabe der Ergebnisse des t-Tests
+    cat("\nErgebnisse des t-Tests:\n")
+    print(t_test_result)
+}
