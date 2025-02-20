@@ -108,3 +108,52 @@ analyze_metric_dichotomous <- function(data, metric_var, dichotomous_var) {
     cat("\nErgebnisse des t-Tests:\n")
     print(t_test_result)
 }
+
+## v) Eine Funktion, die eine geeignete Visualisierung von drei oder vier kategorialen Variablen erstellt
+
+# Hinweis: es wird das Paket "vcd" benötigt
+kategoriell <- function(x, y, z, v = NULL, main = "Mosaikaplot", col = c("lightblue", "lightgreen", "salmon", "lightpink")){
+  
+  # Extrahiere die Variablennamen
+  name_x <- as.character(substitute(x))[length(as.character(substitute(x)))]
+  name_y <- as.character(substitute(y))[length(as.character(substitute(y)))]
+  name_z <- as.character(substitute(z))[length(as.character(substitute(z)))]
+  name_v <- as.character(substitute(v))[length(as.character(substitute(v)))]
+  
+  # Extrahiere die levels der 3. und 4. Kategorie
+  levels2 <- unique(z)
+  levels1 <- if (!is.null(v)) unique(v) else unique(z)
+  
+  # Verlängere ggf. die Farbpalette
+  if(length(col) < length(levels1)){
+    col <- rainbow(length(levels1))
+  }
+  
+  # Definiere den Layout so, damit man unten eine schöne, lesbare Legende für die letzte
+  # Kategorie einfügen kann
+  layout(matrix(c(1, 2), nrow = 2), heights = c(5, 1))
+  
+  # Anpassung vom Fit, damit alle Beschriftungen passen
+  if(is.null(v)) {
+    par(mar = c(5, 5, 4, 2))
+  } else {
+    par(mar = c(6, 6, 4, 2))
+  }
+  
+  if(is.null(v)){
+         mosaicplot(table(x, y, z), main = main, color = col[1:length(levels2)], 
+                    xlab = name_x, ylab = name_y)
+  }
+  else{
+         mosaicplot(table(x, y, z, v), main = main, color = col[1:length(levels1)], 
+                    xlab = name_z, ylab = name_y)
+    # Beschrifte die erste Unterteilung oben und die Dritte (im Falle von 4) unten
+    mtext(name_x, side = 3, line = 0.1, cex = 1.2, font = 1)
+  }
+  
+  par(mar = c(0, 0, 0, 0))
+  plot.new()
+  legend("center", legend = levels1, 
+         fill = col[1:length(levels1)],
+         title = ifelse(is.null(v), name_z, name_v), horiz = T)
+}
