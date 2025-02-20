@@ -126,7 +126,7 @@ kategoriell <- function(x, y, z, v = NULL, main = "Mosaikaplot", col = c("lightb
   
   # Verlängere ggf. die Farbpalette
   if(length(col) < length(levels1)){
-    col <- rainbow(length(levels1))
+    col <- brewer.pal((length(levels1)), "Pastel1")
   }
   
   # Definiere den Layout so, damit man unten eine schöne, lesbare Legende für die letzte
