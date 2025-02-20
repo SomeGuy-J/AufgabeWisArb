@@ -1,32 +1,16 @@
-# 1) Automatische Auswahl eines geeigneten statistischen Tests (T-Test oder Wilcoxon-Test)
-select_statistical_test <- function(data, metric_var, dichotomous_var) {
-  shapiro_test <- shapiro.test(data[[metric_var]])$p.value
-  
-  if (shapiro_test < 0.05) {
-    return(wilcox.test(data[[metric_var]] ~ data[[dichotomous_var]]))
-  } else {
-    return(t.test(data[[metric_var]] ~ data[[dichotomous_var]]))
+## Funktion 1) Prüft ob die Variable ein Factor oder Character ist
+
+kategoriale_variablen <- function(data, var) {
+  ##Überprüfen, ob die Variable ein Factor oder Character ist
+  if (!is.factor(data[[var]]) && !is.character(data[[var]])) {
+    stop("Die Variable muss ein Factor oder Character sein.")
   }
-}
 
-# 2) Konvertierung einer kategorialen Variable in einen Factor (sichert einheitliche Verarbeitung)
-convert_to_factor <- function(data, var) {
-  if (!var %in% names(data)) stop("Variable nicht im Datensatz gefunden.")
-  data[[var]] <- as.factor(data[[var]])
-  return(data)
-}
 
-# 3) NA-Werte aus einer numerischen Variable entfernen und zurückgeben
-clean_na <- function(data, var) {
-  if (!var %in% names(data)) stop("Variable nicht im Datensatz gefunden.")
-  return(na.omit(data[[var]]))
-}
+## Funktion 2) Prüft ob Variablen existieren
 
-# 4) Funktion zur sicheren Überprüfung auf dichotome Variablen
-check_dichotomous <- function(data, var) {
-  unique_vals <- unique(data[[var]])
-  if (length(unique_vals) != 2) {
-    stop("Die Variable muss genau zwei Kategorien haben.")
+bivariate_kategorial <- function(data, var1, var2) {
+  # Überprüfen, ob Variablen existieren
+  if (!(var1 %in% names(data)) || !(var2 %in% names(data))) {
+    stop("Eine oder beide Variablen sind nicht im Datensatz vorhanden.")
   }
-  return(TRUE)
-}
