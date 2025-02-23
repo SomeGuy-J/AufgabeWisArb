@@ -12,7 +12,7 @@ Die Aufgaben wurden folgendermaßen verteilt:
       iv) - Jan Mathias Lüchtefeld
       v) - Vladimir Atanasov
    b) - Jonathan Heinritz
-
+3.
 4. Jan Mathias Lüchtefeld
 
 5. Diskussion der Ergebnisse
