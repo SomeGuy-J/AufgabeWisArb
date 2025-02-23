@@ -37,11 +37,11 @@ Interpretation:
 - Der p-Wert ist sehr klein (weit unter dem üblichen Signifikanzniveau von 0,05), was darauf hindeutet, dass ein *signifikanter Zusammenhang* zwischen dem Geschlecht und dem Überlebensstatus besteht.
 
 Mögliche Gründe für die Ergebnisse:
-Rettungsboot-Priorität
+1. Rettungsboot-Priorität
 - Während der Evakuierung der Titanic wurde die Regel "Frauen und Kinder zuerst" angewendet. Dies führte dazu, dass Frauen eine höhere Überlebenschance hatten.
 - Männer wurden oft zurückgelassen, um Platz in den Rettungsbooten für Frauen und Kinder zu schaffen.
 
-Soziale Normen
+2. Soziale Normen
 - In der damaligen Gesellschaft wurden Frauen und Kinder als schützenswerter angesehen, was sich in der Rettungspriorität widerspiegelte.
 - Männer, insbesondere aus der Arbeiterklasse, hatten oft keine Priorität bei der Rettung.
 
@@ -64,12 +64,12 @@ Interpretation:
 
 Mögliche Gründe für die Ergebnisse
 1. Passagierklasse
-   - Der Ticketpreis korreliert stark mit der Passagierklasse. Passagiere der 1. Klasse zahlten höhere Preise und hatten besseren Zugang zu Rettungsbooten.
-   - Passagiere der 3. Klasse, die in der Regel weniger für ihre Tickets zahlten, hatten oft schlechteren Zugang zu Rettungsbooten und waren weiter von den Rettungsbooten entfernt.
+- Der Ticketpreis korreliert stark mit der Passagierklasse. Passagiere der 1. Klasse zahlten höhere Preise und hatten besseren Zugang zu Rettungsbooten.
+- Passagiere der 3. Klasse, die in der Regel weniger für ihre Tickets zahlten, hatten oft schlechteren Zugang zu Rettungsbooten und waren weiter von den Rettungsbooten entfernt.
 
 2. Priorisierung während der Evakuierung
-   - Passagiere der 1. Klasse wurden möglicherweise bevorzugt gerettet, während Passagiere der 3. Klasse benachteiligt waren.
-   - Dies könnte auf soziale Hierarchien und die damaligen gesellschaftlichen Normen zurückzuführen sein.
+- Passagiere der 1. Klasse wurden möglicherweise bevorzugt gerettet, während Passagiere der 3. Klasse benachteiligt waren.
+- Dies könnte auf soziale Hierarchien und die damaligen gesellschaftlichen Normen zurückzuführen sein.
 
 3. Lage der Kabinen
-   - Passagiere der 1. Klasse hatten oft Kabinen in höheren Decks, die näher an den Rettungsbooten lagen. Dies könnte ihre Überlebenschance erhöht haben.
+- Passagiere der 1. Klasse hatten oft Kabinen in höheren Decks, die näher an den Rettungsbooten lagen. Dies könnte ihre Überlebenschance erhöht haben.
