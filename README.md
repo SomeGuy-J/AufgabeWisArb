@@ -10,7 +10,7 @@ Die Aufgaben wurden folgendermaßen verteilt:
       ii) - Alexander Wiebe
       iii) - Jonathan Heinritz
       iv) - Jan Mathias Lüchtefeld
-      v) Vladimir Atanasov
+      v) - Vladimir Atanasov
    b) - Jonathan Heinritz
 
-4. Espen Schnerrer & Alexander Wiebe
+4. Jan Mathias Lüchtefeld
