@@ -1,0 +1,30 @@
+## Laden von Pakete
+library(dplyr)
+library(vcd)
+
+## Den aufgeräumten Datensatz laden!
+## titanic_data <- read.csv("path/to/your/titanic_cleaned.csv")
+
+## i) Anwendung der ersten  Funktion (für deskriptive Statistiken für metrische Variablen)
+## Angenommen, wir analysieren die "Fare" (Ticketpreis)
+## fare_stats <- deskriptive_statistik_metrischer_variabeln(titanic_data$Fare)
+## print("Deskriptive Statistiken für den Ticketpreis:")
+## print(fare_stats)
+
+## ii) Anwendung der zweiten Funktion (für kategoriale Variablen)
+## Angenommen, wir analysieren das Geschlecht ("Sex")
+sex_stats <- kategoriale_variablen(titanic_data, "Sex")
+print("Häufigkeiten und Modus für das Geschlecht:")
+print(sex_stats)
+
+## iii) Anwendung der dritten (Funktion für bivariate Analysen zwischen zwei kategorialen Variablen)
+## Überlebensstatus ("Survived") und Geschlecht ("Sex")
+bivariate_results <- bivariate_kategorial(titanic_data, "Survived", "Sex")
+print("Bivariate Analyse zwischen Überlebensstatus und Geschlecht:")
+print(bivariate_results)
+
+## iv) Zusammenhang zwischen dem Ticketpreis ("Fare") und dem Überlebensstatus ("Survived") mithilfe der vierten Funktion
+analyze_metric_dichotomous(titanic_data, "Fare", "Survived")
+
+## v) Visualisierung von drei kategorialen Variablen: Überlebensstatus, Geschlecht und Passagierklasse ("Pclass")
+kategoriell(titanic_data$Survived, titanic_data$Sex, titanic_data$Pclass)
