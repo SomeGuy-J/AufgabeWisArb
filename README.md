@@ -31,7 +31,7 @@ Dies könnte auf die damaligen gesellschaftlichen Normen zurückzuführen sein, 
 
 Chi-Quadrat-Test:
 - Chi-Quadrat-Statistik: 260,72
-- p-Wert: < 2,2e-16 (extrem signifikant)
+- p-Wert: < 2,2e-16 (signifikant)
 
 Interpretation:
 - Der p-Wert ist sehr klein (weit unter dem üblichen Signifikanzniveau von 0,05), was darauf hindeutet, dass ein *signifikanter Zusammenhang* zwischen dem Geschlecht und dem Überlebensstatus besteht.
@@ -55,7 +55,7 @@ Interpretation:
 
 t-Test:
 - t-Wert: 7,4231
-- p-Wert: 4,336e-13 (extrem signifikant)
+- p-Wert: 4,336e-13 (signifikant)
 - 95 % Konfidenzintervall: Der Unterschied der Mittelwerte liegt zwischen 20,12 und 35,68.
 
 Interpretation:
@@ -73,3 +73,5 @@ Mögliche Gründe für die Ergebnisse
 
 3. Lage der Kabinen
 - Passagiere der 1. Klasse hatten oft Kabinen in höheren Decks, die näher an den Rettungsbooten lagen. Dies könnte ihre Überlebenschance erhöht haben.
+
+Bei der Ausführung der Funktion aus v) fällt direkt ein enormer Unterschied in den Verteilungen zwischen verstorbenen Männer und Frauen - es sind relativ mehr Männer gestorben und deutlich mehr Frauen sind überlebt, was die bekannte Vorgehensweise zur Rettung von Frauen und Kinder widerspiegelt. Zudem ist bei den Blocks der verstorbenen Passagieren ein bemerkenswerter Unterschied zwischen den Klassen zu beobachten. Die Fahrgäste aus der dritten Klasse waren anscheinend nicht von höchster Priorität und die Anteile der Personen aus der ersten und zweiten Klassen sind relativ gleich - wer sich also nur von so einer Katastrophe schützen möchte, kann sich den Aufpreis für die erste Klasse ersparen.
