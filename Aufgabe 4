@@ -6,6 +6,7 @@ library(vcd)
 
 ## Den aufgeräumten Datensatz laden!
 ## titanic_data <- read.csv("path/to/your/titanic_cleaned.csv")
+## Aufgabe 2a) muss zusätzlich geladen werden
 
 ## i) Anwendung der ersten  Funktion (für deskriptive Statistiken für metrische Variablen)
 ## Angenommen, wir analysieren die "Fare" (Ticketpreis)
