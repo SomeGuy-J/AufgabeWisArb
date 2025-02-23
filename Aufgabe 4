@@ -1,4 +1,6 @@
 ## Laden von Pakete
+install.packages("dplyr")
+install.packages("vcd")
 library(dplyr)
 library(vcd)
 
