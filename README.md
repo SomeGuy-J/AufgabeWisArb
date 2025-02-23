@@ -17,10 +17,13 @@ Die Aufgaben wurden folgendermaßen verteilt:
 
 5. Diskussion der Ergebnisse
 
-Geschlechterverteilung:
+Geschlechterverteilung (Variable: Sex):
 
 Die Geschlechterverteilung war unausgewogen, mit deutlich mehr Männern als Frauen an Bord.
 Dies könnte auf die damaligen gesellschaftlichen Normen zurückzuführen sein, bei denen Männer häufiger reisten (z. B. als Arbeiter oder alleinstehende Reisende). Die Überlebensrate könnte ebenfalls von dieser Verteilung beeinflusst worden sein, da Frauen und Kinder bei der Evakuierung oft bevorzugt wurden.
+- Häufigkeiten: Es gab 314 Frauen und 577 Männer an Bord der Titanic.
+- Modus: Die häufigste Kategorie ist "male" (Männer).
+- Relativen Häufigkeiten: 35,24 % der Passagiere waren Frauen, während 64,76 % Männer waren.
 
 
    
