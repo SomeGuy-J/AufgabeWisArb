@@ -45,3 +45,31 @@ Mögliche Gründe für die Ergebnisse:
    - In der damaligen Gesellschaft wurden Frauen und Kinder als schützenswerter angesehen, was sich in der Rettungspriorität widerspiegelte.
    - Männer, insbesondere aus der Arbeiterklasse, hatten oft keine Priorität bei der Rettung.
 
+Mittelwertvergleich:
+- Nicht überlebende Passagiere: Der durchschnittliche Ticketpreis betrug **22,12*.
+- Überlebende Passagiere: Der durchschnittliche Ticketpreis betrug **48,40*.
+
+Interpretation:
+- Überlebende Passagiere zahlten im Durchschnitt deutlich mehr für ihre Tickets als nicht überlebende Passagiere.
+- Dies deutet darauf hin, dass Passagiere mit höheren Ticketpreisen (in der Regel Passagiere der 1. Klasse) eine höhere Überlebenschance hatten.
+
+t-Test:
+- t-Wert: 7,4231
+- p-Wert: 4,336e-13 (extrem signifikant)
+- 95 % Konfidenzintervall: Der Unterschied der Mittelwerte liegt zwischen 20,12 und 35,68.
+
+Interpretation:
+- Der p-Wert ist extrem klein (weit unter dem üblichen Signifikanzniveau von 0,05), was darauf hindeutet, dass der Unterschied in den durchschnittlichen Ticketpreisen zwischen überlebenden und nicht überlebenden Passagieren *statistisch signifikant* ist.
+- Die Nullhypothese (kein Unterschied in den Ticketpreisen zwischen überlebenden und nicht überlebenden Passagieren) kann verworfen werden.
+
+Mögliche Gründe für die Ergebnisse*
+1. Passagierklasse
+   - Der Ticketpreis korreliert stark mit der Passagierklasse. Passagiere der 1. Klasse zahlten höhere Preise und hatten besseren Zugang zu Rettungsbooten.
+   - Passagiere der 3. Klasse, die in der Regel weniger für ihre Tickets zahlten, hatten oft schlechteren Zugang zu Rettungsbooten und waren weiter von den Rettungsbooten entfernt.
+
+2. Priorisierung während der Evakuierung
+   - Passagiere der 1. Klasse wurden möglicherweise bevorzugt gerettet, während Passagiere der 3. Klasse benachteiligt waren.
+   - Dies könnte auf soziale Hierarchien und die damaligen gesellschaftlichen Normen zurückzuführen sein.
+
+3. Lage der Kabinen
+   - Passagiere der 1. Klasse hatten oft Kabinen in höheren Decks, die näher an den Rettungsbooten lagen. Dies könnte ihre Überlebenschance erhöht haben.
